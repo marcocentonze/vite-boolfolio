@@ -93,9 +93,7 @@ export default {
       <div class="row">
         <div class="col-md-4 mb-4 d-flex align-items-stretch" v-for="project in projects.data">
           <div class="card shadow w-100">
-            <img
-              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-              class="card-img-top" alt="Project Image">
+            <img :src="project.cover_image" class="card-img-top" :alt="project.title">
             <div class="card-body">
               <h5 class="card-title">{{ project.title }}</h5>
               <p class="card-text">{{ project.description }}</p>
