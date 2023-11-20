@@ -4,13 +4,13 @@ import { createWebHashHistory, createRouter } from "vue-router";
 // 1. Define route components.
 import HomeView from "./views/HomeView.vue";
 
-// import AboutView from "./views/AboutView.vue";
+import AboutView from "./views/AboutView.vue";
 // import ContactsView from "./views/ContactsView.vue";
 
 // 2. Define some routes
 const routes = [
   { path: "/", component: HomeView },
-//   { path: "/about", component: AboutView },
+  { path: "/about", component: AboutView },
   //
   //   {
   //     path: '/blog/:slug',
