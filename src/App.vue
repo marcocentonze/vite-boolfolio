@@ -8,44 +8,45 @@ import axios from 'axios';
 export default {
   name: 'App',
   components: {
-        ProjectCard,
-        AppHeader,
-        AppFooter,
-        AppJumbo,
-       
-    },
+    ProjectCard,
+    AppHeader,
+    AppFooter,
+    AppJumbo,
+
+  },
   data() {
     return {
-     
+
     }
 
   },
 
   methods: {
-  
+
   },
 
   mounted() {
-    
+
   }
 
 }
 </script>
 
 <template>
- <AppHeader></AppHeader>
+  <!-- header -->
+  <AppHeader></AppHeader>
 
   <!-- jumbotron -->
   <AppJumbo></AppJumbo>
- 
+
   <!-- cards -->
- <ProjectCard></ProjectCard>
- 
+  <main>
+    <router-view></router-view>
+  </main>
+
+
   <!-- footer -->
   <AppFooter></AppFooter>
-
 </template>
 
-<style>
-
-</style>
+<style></style>
