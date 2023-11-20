@@ -6,6 +6,7 @@ import HomeView from "./views/HomeView.vue";
 
 import AboutView from "./views/AboutView.vue";
 import ContactsView from "./views/ContactsView.vue";
+import ProjectsView from "./views/ProjectsView.vue";
 
 // 2. Define some routes
 const routes = [
@@ -18,6 +19,7 @@ const routes = [
   //     component: SingleBlogPostView
   //   },
   { path: "/contacts", component: ContactsView },
+  { path: "/projects", component: ProjectsView },
 ];
 
 // 3. Create the router instance and pass the `routes` option

@@ -1,5 +1,4 @@
 <script>
-import ProjectCard from './components/ProjectCard.vue';
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
 import AppJumbo from './components/AppJumbo.vue';
@@ -8,7 +7,6 @@ import axios from 'axios';
 export default {
   name: 'App',
   components: {
-    ProjectCard,
     AppHeader,
     AppFooter,
     AppJumbo,

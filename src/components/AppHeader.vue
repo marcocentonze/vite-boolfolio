@@ -39,6 +39,10 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/contacts">Contacts</router-link>
             </li>
+            
+            <li class="nav-item">
+              <router-link class="nav-link" to="/projects">Projects</router-link>
+            </li>
            
           </ul>
           <form class="d-flex my-2 my-lg-0">
