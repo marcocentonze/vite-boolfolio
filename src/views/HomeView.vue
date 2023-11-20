@@ -22,7 +22,7 @@ export default {
 
 
 <template>
-    <div class="container mt-5">
+    <div class="container mt-4">
         <h2 class="text-primary mb-3">Hey there.</h2>
         <h2>Welcome to my Portfolio</h2>
         <h4 class="mt-4">
@@ -31,7 +31,7 @@ export default {
         </h4>
     </div>
 
-    <div class="container mt-5">
+    <div class="container my-4">
         <div class="row">
             <!-- Front-End Technologies -->
             <div class="col-md-6">
@@ -59,6 +59,11 @@ export default {
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title"><i class="fab fa-vuejs icon-vuejs"></i> Vue.js</h5>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/410px-Vitejs-logo.svg.png?20220412224743" style="width: 18px; height: auto;" alt="Vite Logo"> Vite</h5>
                     </div>
                 </div>
 

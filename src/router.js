@@ -5,7 +5,7 @@ import { createWebHashHistory, createRouter } from "vue-router";
 import HomeView from "./views/HomeView.vue";
 
 import AboutView from "./views/AboutView.vue";
-// import ContactsView from "./views/ContactsView.vue";
+import ContactsView from "./views/ContactsView.vue";
 
 // 2. Define some routes
 const routes = [
@@ -17,7 +17,7 @@ const routes = [
   //     name: 'post',
   //     component: SingleBlogPostView
   //   },
-  //   { path: '/contacts', component: ContactsView },
+  { path: "/contacts", component: ContactsView },
 ];
 
 // 3. Create the router instance and pass the `routes` option
