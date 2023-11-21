@@ -27,8 +27,17 @@ export default {
         })
     },
     goToProject(slug) {
-  this.$router.push({ name: 'SingleProjectView', params: { slug: slug } });
-}
+      this.$router.push({ name: 'SingleProjectView', params: { slug: slug } });
+    },
+    getCoverImageUrl(imagePath) {
+      if (imagePath.startsWith('http') || imagePath.startsWith('/')) {
+        // Se il percorso inizia con 'http' o / lo usa
+        return imagePath;
+      } else {
+        // Altrimenti, aggiunge 'this.base_url + 'storage/''
+        return this.base_url + 'storage/' + imagePath;
+      }
+    }
   },
 
   mounted() {
@@ -44,7 +53,7 @@ export default {
       <div class="row">
         <div class="col-md-4 mb-4 d-flex align-items-stretch" v-for="project in projects.data">
           <div class="card shadow w-100">
-            <img :src="project.cover_image" class="card-img-top" :alt="project.title">
+            <img :src="getCoverImageUrl(project.cover_image)" class="card-img-top" :alt="project.title">
             <div class="card-body">
               <h4 class="card-title">{{ project.title }}</h4>
               <p class="card-text">{{ project.description }}</p>
