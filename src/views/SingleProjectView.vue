@@ -25,12 +25,14 @@ export default {
     mounted() {
         axios.get(this.base_url + 'api/projects/' + this.$route.params.slug)
             .then(response => {
-                console.log(response);
+                // console.log(response);
                 if (response.data.success) {
                     this.project = response.data.result;
                     this.response = true;
                 } else {
-                    this.errorMessage = response.data.result; // messaggio di errore dall'API
+                    this.$router.push({
+                        name: 'NotFound'
+                    });
                 }
             })
             .catch(err => {

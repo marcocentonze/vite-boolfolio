@@ -56,7 +56,7 @@ export default {
             <img :src="getCoverImageUrl(project.cover_image)" class="card-img-top" :alt="project.title"
               style="width: 414px; height: 276px;">
             <div class="card-body d-flex flex-column justify-content-between" style="height: 300px;">
-              <!-- Modificato qui -->
+          
               <div>
                 <h4 class="card-title">{{ project.title }}</h4>
                 <p class="card-text">{{ project.description }}</p>
