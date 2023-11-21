@@ -53,12 +53,17 @@ export default {
       <div class="row">
         <div class="col-md-4 mb-4 d-flex align-items-stretch" v-for="project in projects.data">
           <div class="card shadow w-100">
-            <img :src="getCoverImageUrl(project.cover_image)" class="card-img-top" :alt="project.title">
-            <div class="card-body">
-              <h4 class="card-title">{{ project.title }}</h4>
-              <p class="card-text">{{ project.description }}</p>
+            <img :src="getCoverImageUrl(project.cover_image)" class="card-img-top" :alt="project.title"
+              style="width: 414px; height: 276px;">
+            <div class="card-body d-flex flex-column justify-content-between" style="height: 300px;">
+              <!-- Modificato qui -->
+              <div>
+                <h4 class="card-title">{{ project.title }}</h4>
+                <p class="card-text">{{ project.description }}</p>
+              </div>
 
               <div class="card-links d-flex justify-content-between">
+                <!-- Links e bottoni -->
                 <div>
                   <a :href="project.github_link" class="card-link btn btn-dark">
                     <i class="fa-brands fa-github"></i> GitHub
@@ -74,8 +79,8 @@ export default {
         </div>
       </div>
     </div>
-
   </main>
 </template>
+
 
 <style scoped></style>
