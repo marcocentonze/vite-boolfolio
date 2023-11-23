@@ -9,23 +9,27 @@ export default {
       base_url: 'http://127.0.0.1:8000/',
       projects_api: 'api/projects',
       projects: [],
+      currentPage: 1,
+      totalPages: 0,
     }
 
   },
 
   methods: {
-    getProjects() {
-      const url = this.base_url + this.projects_api;
-      axios
-        .get(url)
+    getProjects(page = 1) {
+      const url = `${this.base_url}${this.projects_api}?page=${page}`;
+      axios.get(url)
         .then(response => {
-          console.log(response);
-          this.projects = response.data.result
+          this.projects = response.data.result;
+          this.totalPages = response.data.result.last_page;
+          this.currentPage = response.data.result.current_page;
         })
-        .catch(err => {
-          console.error(err);
-        })
+        .catch(err => console.error(err));
     },
+    changePage(page) {
+      this.getProjects(page);
+    },
+
     goToProject(slug) {
       this.$router.push({ name: 'SingleProjectView', params: { slug: slug } });
     },
@@ -41,8 +45,11 @@ export default {
   },
 
   mounted() {
-    this.getProjects();
-  }
+    this.getProjects(this.currentPage);
+  },
+
+
+
 
 }
 </script>
@@ -56,7 +63,7 @@ export default {
             <img :src="getCoverImageUrl(project.cover_image)" class="card-img-top" :alt="project.title"
               style="width: 414px; height: 276px;">
             <div class="card-body d-flex flex-column justify-content-between" style="height: 300px;">
-          
+
               <div>
                 <h4 class="card-title">{{ project.title }}</h4>
                 <p class="card-text">{{ project.description }}</p>
@@ -78,8 +85,24 @@ export default {
           </div>
         </div>
       </div>
+      <!-- pagination -->
+      <nav aria-label="Page navigation example text-center">
+        <ul class="pagination">
+          <!-- // no previus if i am in the first page -->
+          <li class="page-item" :class="{ disabled: currentPage === 1 }">
+            <a class="page-link" href="#" @click.prevent="changePage(currentPage - 1)">Previous</a>
+          </li>
+          <li class="page-item" v-for="page in totalPages" :key="page" :class="{ active: page === currentPage }">
+            <a class="page-link" href="#" @click.prevent="changePage(page)">{{ page }}</a>
+          </li>
+          <li class="page-item" :class="{ disabled: currentPage === totalPages }">
+            <a class="page-link" href="#" @click.prevent="changePage(currentPage + 1)">Next</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </main>
+  
 </template>
 
 
