@@ -25,9 +25,16 @@ export default {
             }).catch(err => {
                 console.error(err);
             })
-    }
-
-
+    },
+    getCoverImageUrl(imagePath) {
+            if (imagePath.startsWith('http') || imagePath.startsWith('/')) {
+                // Se il percorso inizia con 'http' o / lo usa
+                return imagePath;
+            } else {
+                // Altrimenti, aggiunge 'this.base_url + 'storage/''
+                return this.base_url + 'storage/' + imagePath;
+            }
+        }
     },
     mounted() {
         this.getLatest();
@@ -38,7 +45,7 @@ export default {
 
 <template> 
 <div class="container">
-    <div>
+    <div class="text-style">
         <h2>About me:</h2>
         <h2>Lorem</h2>
         <h2>Lorem</h2>
@@ -47,15 +54,16 @@ export default {
     </div>
     
     <div class="row">
-        <h2>My latest projects:</h2>
-      <div class="col-md-4 mb-4 d-flex align-items-stretch" v-for="project in latest_projects">
-        <div class="card shadow w-100">
-          <img :src="project.cover_image" class="card-img-top" :alt="project.title">
-          <div class="card-body">
-            <h4 class="card-title">{{ project.title }}</h4>
-            <p class="card-text">{{ project.description }}</p>
-
-            <div class="card-links">
+      <h2 class="text-style text-danger text-center">My latest projects:</h2>
+      <div class="col-md-4 mb-4" v-for="project in latest_projects" :key="project.id">
+        <div class="card shadow h-100"> 
+          <img :src="getCoverImageUrl(project.cover_image)" class="card-img-top" :alt="project.title" style="width: 414px; height: 276px;">
+          <div class="card-body d-flex flex-column justify-content-between"> 
+            <div>
+              <h4 class="card-title">{{ project.title }}</h4>
+              <p class="card-text">{{ project.description }}</p>
+            </div>
+            <div class="mt-auto pt-3"> 
               <a :href="project.github_link" class="card-link btn btn-dark">
                 <i class="fa-brands fa-github"></i> GitHub
               </a>
@@ -67,7 +75,13 @@ export default {
         </div>
       </div>
     </div>
-  </div></template>
+  </div>
+  </template>
 
 
-<style></style>
+<style>
+.text-style {
+  color: white; 
+  text-shadow: 2px 2px 4px #000000; 
+}
+</style>

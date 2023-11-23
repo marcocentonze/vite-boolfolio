@@ -29,7 +29,7 @@ export default {
 
 
 <template> 
-<div class="container my-2">
+<div class="container">
   <h1>All my projects:</h1>
 </div>
 

@@ -2,6 +2,7 @@
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
 import AppJumbo from './components/AppJumbo.vue';
+
 import axios from 'axios';
 
 export default {
@@ -47,4 +48,10 @@ export default {
   <AppFooter></AppFooter>
 </template>
 
-<style></style>
+<style>
+main {
+  background-image: url('./assets/images/sfondo-portfolio.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>

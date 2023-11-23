@@ -86,7 +86,8 @@ export default {
         </div>
       </div>
       <!-- pagination -->
-      <nav aria-label="Page navigation example text-center">
+      <div class="d-flex justify-content-center">
+      <nav aria-label="Page navigation example">
         <ul class="pagination">
           <!-- // no previus if i am in the first page -->
           <li class="page-item" :class="{ disabled: currentPage === 1 }">
@@ -101,8 +102,9 @@ export default {
         </ul>
       </nav>
     </div>
+  </div>
   </main>
-  
+
 </template>
 
 

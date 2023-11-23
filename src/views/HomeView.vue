@@ -22,20 +22,20 @@ export default {
 
 
 <template>
-    <div class="container mt-4">
-        <h2 class="text-primary mb-3">Hey there.</h2>
-        <h2>Welcome to my Portfolio</h2>
-        <h4 class="mt-4">
+    <div class="container text-center mb-5">
+        <h2 class="text-primary mb-3 text-style">Hey there.</h2>
+        <h2 class="text-style">Welcome to my Portfolio</h2>
+        <h4 class="mt-4 text-style">
             I will show you what I have learned in these 5 months with Boolean, experimenting with both front-end and
             back-end technologies.
         </h4>
     </div>
 
-    <div class="container my-4">
+    <div class="container">
         <div class="row">
             <!-- Front-End Technologies -->
             <div class="col-md-6">
-                <h2 class="mb-4">Front-End Technologies</h2>
+                <h2 class="mb-4 text-style text-danger">Front-End Technologies</h2>
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title"><i class="fab fa-html5 icon-html"></i> HTML</h5>
@@ -71,7 +71,7 @@ export default {
 
             <!-- Back-End Technologies -->
             <div class="col-md-6">
-                <h2 class="mb-4">Back-End Technologies</h2>
+                <h2 class="mb-4 text-style text-danger">Back-End Technologies</h2>
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title"><i class="fab fa-php icon-php"></i> PHP</h5>
@@ -126,4 +126,9 @@ export default {
 
 .icon-mysql {
     color: #4479A1;
-}</style>
+}
+.text-style {
+  color: white; 
+  text-shadow: 2px 2px 4px #000000; 
+}
+</style>
