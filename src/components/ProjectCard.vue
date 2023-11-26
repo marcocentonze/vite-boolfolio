@@ -11,6 +11,7 @@ export default {
       projects: [],
       currentPage: 1,
       totalPages: 0,
+      
     }
 
   },
@@ -85,6 +86,7 @@ export default {
           </div>
         </div>
       </div>
+      
       <!-- pagination -->
       <div class="d-flex justify-content-center">
       <nav aria-label="Page navigation example">

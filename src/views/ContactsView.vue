@@ -55,7 +55,7 @@ export default {
 
 
         <div class="pb-4">
-          <button type="submit" class="btn btn-primary w-100">Send</button>
+          <button type="submit" class="btn btn-primary w-100 contact-btn">Send</button>
         </div>
 
       </form>
@@ -71,11 +71,25 @@ export default {
   text-shadow: 2px 2px 4px #000000; 
 }
 .text-style-small {
-  color: #d3d32e; /* Usato un colore esadecimale per una migliore precisione */
-  font-size: 0.875em; /* Leggermente più grande per una migliore leggibilità */
-  display: block; /* Rende il testo su una nuova riga per una migliore struttura */
-  margin-top: 0.25rem; /* Aggiunge spazio sopra per distanziarlo dall'input */
+  color: #d3d32e; 
+  font-size: 0.875em; 
+  display: block; 
+  margin-top: 0.25rem; 
   text-shadow: 1px 1px 2px #000000; 
-  /* text-shadow: 2px 2px 4px #000000;  */
+  text-shadow: 2px 2px 4px #000000; 
+}
+.contact-btn {
+  background-color: #50c878; 
+  background-image: linear-gradient(to right, #50c878, #009688); 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 10px 20px; 
+  transition: 0.3s ease; 
+}
+
+.contact-btn:hover {
+  background-image: linear-gradient(to left, #50c878, #009688); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 </style>

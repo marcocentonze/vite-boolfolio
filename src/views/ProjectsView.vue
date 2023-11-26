@@ -30,7 +30,7 @@ export default {
 
 <template> 
 <div class="container">
-  <h1>All my projects:</h1>
+  <h1 class="text-danger text-center py-3">All my projects:</h1>
 </div>
 
 <ProjectCard></ProjectCard>
@@ -40,5 +40,8 @@ export default {
 
 
 <style>
-
+.text-style {
+  color: white; 
+  text-shadow: 2px 2px 4px #000000; 
+}
 </style>

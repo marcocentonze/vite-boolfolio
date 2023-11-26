@@ -53,5 +53,6 @@ main {
   background-image: url('./assets/images/sfondo-portfolio.png');
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Roboto', sans-serif;
 }
 </style>
